@@ -18,6 +18,7 @@
 		8577446B24825A7F00F3C2B7 /* AddQueueViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8577446A24825A7F00F3C2B7 /* AddQueueViewController.storyboard */; };
 		85A7ABEE24855E45002684FF /* QueueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7ABED24855E45002684FF /* QueueData.swift */; };
 		C3BEFE41B322C9C36FB55D66 /* Pods_VirtualLine_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B4BCA97729856B6CF8AA0 /* Pods_VirtualLine_Admin.framework */; };
+		D37677C3250A34D100757862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37677C2250A34D100757862 /* GoogleService-Info.plist */; };
 		D3A7B54C246072E500C0247C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7B54B246072E500C0247C /* AppDelegate.swift */; };
 		D3A7B54E246072E500C0247C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7B54D246072E500C0247C /* SceneDelegate.swift */; };
 		D3A7B550246072E500C0247C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7B54F246072E500C0247C /* ViewController.swift */; };
@@ -26,7 +27,6 @@
 		D3A7B558246072E700C0247C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A7B557246072E700C0247C /* Assets.xcassets */; };
 		D3A7B55B246072E700C0247C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A7B559246072E700C0247C /* LaunchScreen.storyboard */; };
 		D3DF13E62496840000869B07 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF13E52496840000869B07 /* Extensions.swift */; };
-		D3DF13E824968D8800869B07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3DF13E724968D8800869B07 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +43,7 @@
 		8577446A24825A7F00F3C2B7 /* AddQueueViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddQueueViewController.storyboard; sourceTree = "<group>"; };
 		85A7ABED24855E45002684FF /* QueueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueData.swift; sourceTree = "<group>"; };
 		AEB06E47EE03907C5A2FE9C1 /* Pods-VirtualLine Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualLine Admin.debug.xcconfig"; path = "Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		D37677C2250A34D100757862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D3A7B548246072E500C0247C /* VirtualLine Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VirtualLine Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A7B54B246072E500C0247C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A7B54D246072E500C0247C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		D3A7B55A246072E700C0247C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3A7B55C246072E700C0247C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DF13E52496840000869B07 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		D3DF13E724968D8800869B07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +153,7 @@
 		D3A7B54A246072E500C0247C /* VirtualLine Admin */ = {
 			isa = PBXGroup;
 			children = (
+				D37677C2250A34D100757862 /* GoogleService-Info.plist */,
 				D3DF13E4249683EB00869B07 /* Extensions */,
 				855CE44D248043890094ED1C /* Dashboard */,
 				855A6B82248259D7003C7A49 /* New Queue */,
@@ -165,7 +166,6 @@
 				D3A7B559246072E700C0247C /* LaunchScreen.storyboard */,
 				D3A7B55C246072E700C0247C /* Info.plist */,
 				D3A7B554246072E500C0247C /* VirtualLine_Admin.xcdatamodeld */,
-				D3DF13E724968D8800869B07 /* GoogleService-Info.plist */,
 			);
 			path = "VirtualLine Admin";
 			sourceTree = "<group>";
@@ -239,11 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				855301E024840AB50040CF7D /* AdminSettingsViewController.storyboard in Resources */,
-				D3DF13E824968D8800869B07 /* GoogleService-Info.plist in Resources */,
 				D3A7B55B246072E700C0247C /* LaunchScreen.storyboard in Resources */,
 				D3A7B558246072E700C0247C /* Assets.xcassets in Resources */,
 				D3A7B553246072E500C0247C /* Main.storyboard in Resources */,
 				8577446B24825A7F00F3C2B7 /* AddQueueViewController.storyboard in Resources */,
+				D37677C3250A34D100757862 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
