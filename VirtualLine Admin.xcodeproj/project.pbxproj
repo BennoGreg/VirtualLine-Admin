@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24D76423301291032AE04DD4 /* Pods_VirtualLine_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7292143B518149A0E028FB6 /* Pods_VirtualLine_Admin.framework */; };
 		85185BC224853E9C00539DA7 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185BC124853E9C00539DA7 /* ServerCommunication.swift */; };
 		855301DC2483FF570040CF7D /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855301DB2483FF570040CF7D /* TestData.swift */; };
 		855301DE24840A830040CF7D /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855301DD24840A830040CF7D /* AdminSettingsViewController.swift */; };
@@ -18,7 +17,7 @@
 		855A6B8424825A07003C7A49 /* AddQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855A6B8324825A07003C7A49 /* AddQueueViewController.swift */; };
 		8577446B24825A7F00F3C2B7 /* AddQueueViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8577446A24825A7F00F3C2B7 /* AddQueueViewController.storyboard */; };
 		85A7ABEE24855E45002684FF /* QueueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7ABED24855E45002684FF /* QueueData.swift */; };
-		C3BEFE41B322C9C36FB55D66 /* Pods_VirtualLine_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2B4BCA97729856B6CF8AA0 /* Pods_VirtualLine_Admin.framework */; };
+		A9101B2F69AFA7626FE01E51 /* Pods_VirtualLine_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9252D4B068BEE13091922E /* Pods_VirtualLine_Admin.framework */; };
 		D37677C3250A34D100757862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37677C2250A34D100757862 /* GoogleService-Info.plist */; };
 		D3A7B54C246072E500C0247C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7B54B246072E500C0247C /* AppDelegate.swift */; };
 		D3A7B54E246072E500C0247C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7B54D246072E500C0247C /* SceneDelegate.swift */; };
@@ -31,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		76B075F487D25BC1FEBA6EA7 /* Pods-VirtualLine Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualLine Admin.release.xcconfig"; path = "Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin.release.xcconfig"; sourceTree = "<group>"; };
 		85185BC124853E9C00539DA7 /* ServerCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		855301DB2483FF570040CF7D /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		855301DD24840A830040CF7D /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +40,10 @@
 		855A6B8324825A07003C7A49 /* AddQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQueueViewController.swift; sourceTree = "<group>"; };
 		8577446A24825A7F00F3C2B7 /* AddQueueViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddQueueViewController.storyboard; sourceTree = "<group>"; };
 		85A7ABED24855E45002684FF /* QueueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueData.swift; sourceTree = "<group>"; };
-		AEB06E47EE03907C5A2FE9C1 /* Pods-VirtualLine Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualLine Admin.debug.xcconfig"; path = "Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		B07B7CBD569748F2AE4C9A94 /* Pods-VirtualLine Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualLine Admin.debug.xcconfig"; path = "Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		C77222EBFB1F24532DA9759F /* Pods-VirtualLine Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualLine Admin.release.xcconfig"; path = "Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin.release.xcconfig"; sourceTree = "<group>"; };
+		CB9252D4B068BEE13091922E /* Pods_VirtualLine_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualLine_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33ED3402510202C00A5317E /* VirtualLine Admin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "VirtualLine Admin.entitlements"; sourceTree = "<group>"; };
 		D37677C2250A34D100757862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D3A7B548246072E500C0247C /* VirtualLine Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VirtualLine Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A7B54B246072E500C0247C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D76423301291032AE04DD4 /* Pods_VirtualLine_Admin.framework in Frameworks */,
+				A9101B2F69AFA7626FE01E51 /* Pods_VirtualLine_Admin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,10 +72,18 @@
 		2F7D6DA6E9491367ED20A2B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E9337BD50DA787F0F3AE81D5 /* Pods-VirtualLine Admin.debug.xcconfig */,
-				76B075F487D25BC1FEBA6EA7 /* Pods-VirtualLine Admin.release.xcconfig */,
+				B07B7CBD569748F2AE4C9A94 /* Pods-VirtualLine Admin.debug.xcconfig */,
+				C77222EBFB1F24532DA9759F /* Pods-VirtualLine Admin.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6FE12CC98CCFBF55F9D1768A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB9252D4B068BEE13091922E /* Pods_VirtualLine_Admin.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		85185BC024853DAD00539DA7 /* Server Communication */ = {
@@ -124,21 +133,13 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
-		9D4657048FDF61D0DA525925 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E7292143B518149A0E028FB6 /* Pods_VirtualLine_Admin.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D3A7B53F246072E500C0247C = {
 			isa = PBXGroup;
 			children = (
 				D3A7B54A246072E500C0247C /* VirtualLine Admin */,
 				D3A7B549246072E500C0247C /* Products */,
 				2F7D6DA6E9491367ED20A2B3 /* Pods */,
-				9D4657048FDF61D0DA525925 /* Frameworks */,
+				6FE12CC98CCFBF55F9D1768A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +154,7 @@
 		D3A7B54A246072E500C0247C /* VirtualLine Admin */ = {
 			isa = PBXGroup;
 			children = (
+				D33ED3402510202C00A5317E /* VirtualLine Admin.entitlements */,
 				D37677C2250A34D100757862 /* GoogleService-Info.plist */,
 				D3DF13E4249683EB00869B07 /* Extensions */,
 				855CE44D248043890094ED1C /* Dashboard */,
@@ -185,11 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3A7B55F246072E700C0247C /* Build configuration list for PBXNativeTarget "VirtualLine Admin" */;
 			buildPhases = (
-				C71D4170B7B1ABFEA830A6D2 /* [CP] Check Pods Manifest.lock */,
+				95B32DD30013363E015DEB44 /* [CP] Check Pods Manifest.lock */,
 				D3A7B544246072E500C0247C /* Sources */,
 				D3A7B545246072E500C0247C /* Frameworks */,
 				D3A7B546246072E500C0247C /* Resources */,
-				5ACDF88E962F6F5901AD3BC1 /* [CP] Embed Pods Frameworks */,
+				29C557799030256DE431821C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,7 +252,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5ACDF88E962F6F5901AD3BC1 /* [CP] Embed Pods Frameworks */ = {
+		29C557799030256DE431821C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,7 +269,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VirtualLine Admin/Pods-VirtualLine Admin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C71D4170B7B1ABFEA830A6D2 /* [CP] Check Pods Manifest.lock */ = {
+		95B32DD30013363E015DEB44 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -450,7 +452,7 @@
 		};
 		D3A7B560246072E700C0247C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9337BD50DA787F0F3AE81D5 /* Pods-VirtualLine Admin.debug.xcconfig */;
+			baseConfigurationReference = B07B7CBD569748F2AE4C9A94 /* Pods-VirtualLine Admin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "VirtualLine Admin/VirtualLine Admin.entitlements";
@@ -472,7 +474,7 @@
 		};
 		D3A7B561246072E700C0247C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76B075F487D25BC1FEBA6EA7 /* Pods-VirtualLine Admin.release.xcconfig */;
+			baseConfigurationReference = C77222EBFB1F24532DA9759F /* Pods-VirtualLine Admin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "VirtualLine Admin/VirtualLine Admin.entitlements";

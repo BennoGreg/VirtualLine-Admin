@@ -43,12 +43,13 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
     
     
     ref = db.collection("queue").addDocument(data: [
-                "CurrentNumber": 0,
-               "Name": queueName,
-               "Reminder": Int (minutesBeforeNotifyingCustomer),
-               "TimePerCustomer": Int(averageTimeCustomer),
-               "UserQueue" : [DocumentReference](),
-               "DeviceToken": token ?? ""
+                "currentNumber": 0,
+               "name": queueName,
+               "reminder": Int (minutesBeforeNotifyingCustomer),
+               "timePerCustomer": Int(averageTimeCustomer),
+               "userQueue" : [DocumentReference](),
+               "deviceToken": token ?? "",
+                "queueCount": 0
            ]){error in
                if let error = error{
                    print("Error adding document: \(error)")
@@ -65,8 +66,8 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
                    print("Document data was empty")
                    return
                }
-               let referenceArray = data["UserQueue"] as! [DocumentReference]
-               var totalTime = data["TimePerCustomer"] as! Int
+               let referenceArray = data["userQueue"] as! [DocumentReference]
+               var totalTime = data["timePerCustomer"] as! Int
                totalTime = totalTime * referenceArray.count
 
             if !referenceArray.isEmpty{
