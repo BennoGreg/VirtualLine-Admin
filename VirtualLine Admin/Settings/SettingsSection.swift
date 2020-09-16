@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol SectionType: CustomStringConvertible {
     var containsSwitch: Bool {get}
 }
@@ -35,7 +36,7 @@ enum SettingsSection: Int, CaseIterable, CustomStringConvertible{
     
 }
 
-enum ProfileOptions: Int, CaseIterable, CustomStringConvertible, SectionType{
+enum LoggedInProfileOptions: Int, CaseIterable, CustomStringConvertible, SectionType{
     var containsSwitch: Bool {return false}
     
     
@@ -52,6 +53,21 @@ enum ProfileOptions: Int, CaseIterable, CustomStringConvertible, SectionType{
            }
            
        }
+}
+
+enum LoggedOutProfileOptions: Int, CaseIterable, CustomStringConvertible, SectionType{
+    var containsSwitch: Bool {return false}
+    
+    
+    case logIn
+    
+    var description: String {
+           
+           switch self {
+           case .logIn:
+               return "Einloggen"
+           }
+    }
 }
 
 enum SettingsOptions: Int, CaseIterable, SectionType{

@@ -25,21 +25,14 @@ class ViewController: UIViewController {
     @IBOutlet var bigStackView: UIStackView!
     var waitingNumber = 1
     
-    struct segues {
-        
-        static let settingsSegue = "SettingsSegue"
-        static let presentationModeSegue = "presentationModeSegue"
-        
-    }
-
     var testQueue = [User(name: "Niklas Wagner", userID: "A219"), User(name: "Benedikt Langer", userID: "B372"), User(name: "Jan Cortiel", userID: "D234"), User(name: "Antonia Langer", userID: "A282"), User(name: "Maria Rohnefeld", userID: "A232"), User(name: "Philip Müller", userID: "O281")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UserDefaults.standard.set(false, forKey: "isQueueCreated")
-        bigStackView.isHidden = true
-        customerDoneButton.isHidden = true
+        bigStackView?.isHidden = true
+        customerDoneButton?.isHidden = true
         setUpUI()
     }
 
@@ -64,8 +57,8 @@ class ViewController: UIViewController {
     }
 
     func setUpUI() {
-        newQueueButton.applyGradient(colors: [ViewController.UIColorFromRGB(0x69BDD2).cgColor, ViewController.UIColorFromRGB(0x44BCDA).cgColor])
-        newQueueButton.setTitle("Warteschlange erstellen", for: .normal)
+        newQueueButton?.applyGradient(colors: [ViewController.UIColorFromRGB(0x69BDD2).cgColor, ViewController.UIColorFromRGB(0x44BCDA).cgColor])
+        newQueueButton?.setTitle("Warteschlange erstellen", for: .normal)
     }
   
   

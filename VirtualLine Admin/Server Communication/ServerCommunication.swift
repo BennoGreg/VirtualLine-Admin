@@ -45,7 +45,7 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
     ref = db.collection("queue").addDocument(data: [
                 "currentNumber": 0,
                "name": queueName,
-               "reminder": Int (minutesBeforeNotifyingCustomer),
+               "reminder": Int(minutesBeforeNotifyingCustomer),
                "timePerCustomer": Int(averageTimeCustomer),
                "userQueue" : [DocumentReference](),
                "deviceToken": token ?? "",
