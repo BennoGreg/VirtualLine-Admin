@@ -27,6 +27,7 @@
 		D3A7B558246072E700C0247C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A7B557246072E700C0247C /* Assets.xcassets */; };
 		D3A7B55B246072E700C0247C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A7B559246072E700C0247C /* LaunchScreen.storyboard */; };
 		D3DF13E62496840000869B07 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF13E52496840000869B07 /* Extensions.swift */; };
+		F753B2466B2DC58E940CAE8E /* Pods_VirtualLine_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C01CBAA51C9CCBEE9D9DBE /* Pods_VirtualLine_Admin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
