@@ -12,7 +12,7 @@ import FirebaseFunctions
 
 var db: Firestore!
 var ref: DocumentReference?
-var functions = Functions.functions()
+var functions = Functions.functions(region: "europe-west1")
 var token: String?
 
 var dataDictionary = [String: Any]()
@@ -55,8 +55,20 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
                    print("Error adding document: \(error)")
                }else{
                    print("Document added with ID: \(ref!.documentID)")
+                if let adminID = Auth.auth().currentUser?.uid, let docRef = ref{
+                    db.collection("admin").document(adminID).updateData(["queueID": docRef]) { (error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }else {
+                            print("Admin updated")
+                        }
+                    }
+                }
+                
                }
            }
+    
+    
            db.collection("queue").document(ref!.documentID).addSnapshotListener { (documentSnapshot, error) in
                guard let document = documentSnapshot else {
                    print("Error fetching document: \(error!)")

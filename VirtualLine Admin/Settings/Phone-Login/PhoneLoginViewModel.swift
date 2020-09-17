@@ -6,6 +6,8 @@
 //  Copyright © 2020 Benedikt. All rights reserved.
 //
 import FirebaseAuth
+import FirebaseFunctions
+import FirebaseFirestore
 
 protocol PhoneLoginDelegate : AnyObject {
     
@@ -102,8 +104,12 @@ class PhoneLoginViewModel {
                 // ...
                 return
               }
-              // User is signed in
-              // ...
+                
+                self?.grantAdminRole()
+                
+                self?.delegate?.verificationCodeValid()
+                print("success")
+                
                 self?.delegate?.verificationCodeValid()
                 print("success")
             }
@@ -112,6 +118,23 @@ class PhoneLoginViewModel {
     public func logOutPhoneNumber() {
         
         
+    }
+    
+    func grantAdminRole() {
+        let user = Auth.auth().currentUser
+        
+        let uidDictionary: [String: Any] = ["uid": user?.uid]
+        
+        functions.httpsCallable("grantAdminRole").call(uidDictionary) { (result, error) in
+            if let error = error as NSError? {
+              if error.domain == FunctionsErrorDomain {
+                let code = FunctionsErrorCode(rawValue: error.code)
+                let message = error.localizedDescription
+                let details = error.userInfo[FunctionsErrorDetailsKey]
+                print(message, details)
+              }
+            }
+        }
     }
    
 }

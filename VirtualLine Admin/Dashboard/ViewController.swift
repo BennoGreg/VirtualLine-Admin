@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
     @IBOutlet var newQueueButton: UIButton!
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
          setUpFirebase()
+        
         
         let isQueueCreated = UserDefaults.standard.bool(forKey: "isQueueCreated")
         if isQueueCreated && !testQueue.isEmpty {
