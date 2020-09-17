@@ -38,5 +38,7 @@ public struct UserDefaultsConfig {
     @UserDefaultsWrapper(key: "notifcationsEnabled", defaultValue: false)
     public static var notifcationsEnabled: Bool
     
+    @UserDefaultsWrapper(key: "isQueueCreated", defaultValue: false)
+    public static var isQueueCreated: Bool
    
 }

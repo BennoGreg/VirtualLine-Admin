@@ -6,9 +6,3 @@
 //  Copyright © 2020 Benedikt. All rights reserved.
 //
 
-import Foundation
-
-struct User {
-    let name: String!
-    let userID: String!
-}

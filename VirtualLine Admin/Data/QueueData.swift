@@ -6,5 +6,26 @@
 //  Copyright © 2020 Benedikt. All rights reserved.
 //
 
-import Foundation
 
+import Firebase
+import FirebaseFirestoreSwift
+
+
+struct Queue: Codable {
+    
+    let name: String?
+    let currentCustomerID: Int?
+    let queueCount: Int?
+    let timePerCustomer: Int?
+    let userQueue: [DocumentReference]?
+   
+}
+
+
+struct User: Codable, Identifiable {
+ 
+    @DocumentID var id: String?
+    let name: String?
+    let queueID: DocumentReference?
+    let numberInQueue: Int?
+}

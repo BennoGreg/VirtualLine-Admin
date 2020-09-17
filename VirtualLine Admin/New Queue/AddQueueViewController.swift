@@ -39,7 +39,7 @@ class AddQueueViewController: UIViewController{
                         if let reminder = queueReminderTextfield.text{
                 
                 createQueue(queueName: name, averageTimeCustomer: waitTime, minutesBeforeNotifyingCustomer: reminder)
-                UserDefaults.standard.set(true, forKey: "isQueueCreated")
+                            UserDefaultsConfig.isQueueCreated = true
                 navController.popViewController(animated: true)
             }
                 }
