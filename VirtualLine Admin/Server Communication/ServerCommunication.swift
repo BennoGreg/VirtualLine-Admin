@@ -41,14 +41,18 @@ func setUpFirebase(){
 func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNotifyingCustomer: String){
     
     
+    guard let adminID = CredentialsController.shared.admin?.id else {return}
+    let adminRef = db.document("admin/\(adminID)")
+    print("called createQueue")
     
     ref = db.collection("queue").addDocument(data: [
+        "adminRef": adminRef,
+        "totalCustomersServed": 0,
                 "currentCustomerID": 0,
                "name": queueName,
                "reminder": Int(minutesBeforeNotifyingCustomer),
                "timePerCustomer": Int(averageTimeCustomer),
                "userQueue" : [DocumentReference](),
-               "deviceToken": token ?? "",
                 "queueCount": 0
            ]){error in
                if let error = error{

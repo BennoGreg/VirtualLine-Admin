@@ -38,8 +38,10 @@ class SettingsCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        addSubview(switchControl)
+        accessoryView = switchControl
+        if let view = accessoryView {
+            addSubview(view)
+        }
         switchControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         switchControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
     }
@@ -63,14 +65,14 @@ class SettingsCell: UITableViewCell {
                 print(token)
                 if sender.isOn {
                     UserDefaultsConfig.notifcationsEnabled = true
-                    if let userID = user?.uid {
-                        db.collection("user").document(userID).updateData(["deviceToken": token, "pushEnabled": true])
+                    if let adminID = user?.uid {
+                        db.collection("admin").document(adminID).updateData(["deviceToken": token, "pushEnabled": true])
                     }
                     print("Turned on")
                 } else {
                     UserDefaultsConfig.notifcationsEnabled = false
-                    if let userID = user?.uid {
-                        db.collection("user").document(userID).updateData(["deviceToken": "", "pushEnabled": false])
+                    if let adminID = user?.uid {
+                        db.collection("admin").document(adminID).updateData(["deviceToken": "", "pushEnabled": false])
                     }
                     print("Turned off")
                 }

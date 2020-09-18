@@ -29,3 +29,12 @@ struct User: Codable, Identifiable {
     let queueID: DocumentReference?
     let numberInQueue: Int?
 }
+
+struct Admin: Codable {
+    
+    @DocumentID var id: String?
+    let name: String?
+    let phoneNumber: String?
+    let pushEnabled: Bool
+    let queueID: DocumentReference?
+}

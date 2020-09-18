@@ -41,12 +41,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpFirebase()
 
-        let isQueueCreated = UserDefaultsConfig.isQueueCreated
-        if isQueueCreated {
+//        let isQueueCreated = UserDefaultsConfig.isQueueCreated
+//        if isQueueCreated {
             getQueueReference()
 
-            newQueueButton.removeFromSuperview()
-            bigStackView.isHidden = false
+//            newQueueButton.removeFromSuperview()
+//            bigStackView.isHidden = false
             //  currentCustomerLabel.text = testQueue.first?.name
 //            if let firstCus = testQueue.first {
 //                currenCustomerIDLabel.text = "Nummer: " + String(waitingNumber)
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 //                queueLengthLabel.text = "\(testQueue.count) Personen"
 //            } else {
 //            }
-        }
+//        }
     }
 
     func setUpUI() {
@@ -154,17 +154,28 @@ class ViewController: UIViewController {
     }
 
     func getQueueReference() {
-        guard let adminID = Auth.auth().currentUser?.uid else { return }
-
+        
+        guard let adminID = Auth.auth().currentUser?.uid else {
+            print("user Not Found")
+            return }
+        print(adminID)
         db.collection("admin").document(adminID).getDocument { [weak self] result, error in
 
             if let error = error {
                 print(error.localizedDescription)
             } else if let result = result {
-                if let data = result.data() {
-                    let queue = data["queueID"] as? DocumentReference
-                    guard let id = queue?.documentID else { return }
-                    self?.getQueueWith(id: id)
+                do {
+                    if let admin = try result.data(as: Admin.self) {
+                        let queue = admin.queueID
+                        CredentialsController.shared.admin = admin
+                        guard let id = queue?.documentID else { return }
+                        self?.newQueueButton.removeFromSuperview()
+                        self?.bigStackView.isHidden = false
+                        self?.getQueueWith(id: id)
+                        
+                    }
+                }catch let error as NSError {
+                    print(error.localizedDescription)
                 }
             }
         }
