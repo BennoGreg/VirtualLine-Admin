@@ -58,6 +58,7 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
                if let error = error{
                    print("Error adding document: \(error)")
                }else{
+                    UserDefaultsConfig.isQueueCreated = true
                    print("Document added with ID: \(ref!.documentID)")
                 if let adminID = Auth.auth().currentUser?.uid, let docRef = ref{
                     db.collection("admin").document(adminID).updateData(["queueID": docRef]) { (error) in

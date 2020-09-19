@@ -40,22 +40,12 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         setUpFirebase()
-
-//        let isQueueCreated = UserDefaultsConfig.isQueueCreated
-//        if isQueueCreated {
+        
+        if UserDefaultsConfig.isQueueCreated {
             getQueueReference()
-
-//            newQueueButton.removeFromSuperview()
-//            bigStackView.isHidden = false
-            //  currentCustomerLabel.text = testQueue.first?.name
-//            if let firstCus = testQueue.first {
-//                currenCustomerIDLabel.text = "Nummer: " + String(waitingNumber)
-//                nextCustomerNameLabel.text = String(waitingNumber + 1)
-//                nextCustomerIDLabel.text = "ID: " + testQueue[1].userID
-//                queueLengthLabel.text = "\(testQueue.count) Personen"
-//            } else {
-//            }
-//        }
+            newQueueButton.removeFromSuperview()
+            bigStackView.isHidden = false
+        }
     }
 
     func setUpUI() {
@@ -63,23 +53,7 @@ class ViewController: UIViewController {
         newQueueButton?.setTitle("Warteschlange erstellen", for: .normal)
     }
 
-    /*
-
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == segues.settingsSegue {
-                 if let settingsViewController = segue.destination as? AdminSettingsViewController {
-                         //nextViewController.valueOfxyz = "XYZ"
-                         //settingsViewController.valueOf123 = 123
-                 }
-            }else if segue.identifier == segues.presentationModeSegue{
-
-                if let presentationModeViewController = segue.destination as? AdminSettingsViewController {
-                                   //nextViewController.valueOfxyz = "XYZ"
-                                   //settingsViewController.valueOf123 = 123
-                           }
-            }
-         }
-     */
+    
     @IBAction func createNewQueueButtonPressed(_ sender: UIButton) {
         
         let user = Auth.auth().currentUser

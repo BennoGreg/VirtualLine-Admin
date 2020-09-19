@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhoneLoginViewController: ViewController {
+class PhoneLoginViewController: ViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -25,7 +25,7 @@ class PhoneLoginViewController: ViewController {
         self.hideKeyboardWhenTappedAround()
         
         viewModel.delegate = self
-        
+        phoneNumberTextField.delegate = self
         self.parent?.title = "Login"
          navigationItem.largeTitleDisplayMode = .always
          self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -50,6 +50,13 @@ class PhoneLoginViewController: ViewController {
             
 
 }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    guard CharacterSet(charactersIn: "+0123456789").isSuperset(of: CharacterSet(charactersIn: string)) else {
+      phoneNumberTextField.text = ""
+      return false
+    }
+        return true
+    }
 
 }
 extension PhoneLoginViewController: PhoneLoginDelegate {
