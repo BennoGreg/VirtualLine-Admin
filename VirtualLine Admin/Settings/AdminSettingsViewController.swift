@@ -186,6 +186,11 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
            
            do {
                try firebaseAuth.signOut()
+            print("succesfully logged out")
+            isLoggedIn = false
+            
+            tableView.reloadData()
+            viewWillAppear(false)
            } catch let signOutError as NSError {
                print("Sign out error: \(signOutError)")
            }

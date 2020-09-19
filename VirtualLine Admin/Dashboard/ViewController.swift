@@ -80,7 +80,17 @@ class ViewController: UIViewController {
             }
          }
      */
+    @IBAction func createNewQueueButtonPressed(_ sender: UIButton) {
+        
+        let user = Auth.auth().currentUser
 
+        if user == nil {
+            presentNotLoggedInAlert()
+        } else {
+            performSegue(withIdentifier: Segues.newQueueSegue, sender: nil)
+        }
+    }
+    
     static func UIColorFromRGB(_ rgbValue: Int) -> UIColor {
         return UIColor(red: (CGFloat)((rgbValue & 0xFF0000) >> 16) / 255.0, green: (CGFloat)((rgbValue & 0x00FF00) >> 8) / 255.0, blue: (CGFloat)(rgbValue & 0x0000FF) / 255.0, alpha: 1.0)
     }
@@ -245,6 +255,22 @@ class ViewController: UIViewController {
         nextCustomerIDLabel.text = customer.id
         nextCustomerNameLabel.text = customer.name
     }
+    
+       func presentNotLoggedInAlert() {
+           
+           let alert = UIAlertController(title: "Nicht eingeloggt", message: "Bitte loggen Sie sich ein um eine Queue erstellen zu können.", preferredStyle: .alert)
+
+                  alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+                  }))
+                  present(alert, animated: true, completion: nil)
+       }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.newQueueSegue {
+                       let vc = segue.destination as! AddQueueViewController
+                       let newQueueVC = vc.self
+                 }
+               }
+          
 }
 
 extension UIButton {

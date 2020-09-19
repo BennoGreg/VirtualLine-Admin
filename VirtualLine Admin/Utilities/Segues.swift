@@ -13,4 +13,5 @@ public struct Segues {
        static let settingsSegue = "SettingsSegue"
        static let presentationModeSegue = "presentationModeSegue"
        static let phoneLoginSegue = "phoneLoginSegue"
+       static let newQueueSegue = "newQueueSegue"
    }
