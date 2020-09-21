@@ -13,12 +13,25 @@ class CredentialsController {
     
     var isLoggedIn = UserDefaultsConfig.isLoggedIn
     var admin: Admin?
+    var companyName = UserDefaultsConfig.companyName
+    var companyPhoneNumber = UserDefaultsConfig.companyPhoneNumber
+    
     public func updateLogInStatus(loggedIn: Bool) {
         
         isLoggedIn = loggedIn
         UserDefaultsConfig.isLoggedIn = loggedIn
         
     }
+    
+    public func updateAdminInfo() {
+        companyName = UserDefaultsConfig.companyName
+        companyPhoneNumber = UserDefaultsConfig.companyPhoneNumber
+    }
+    
+    public func getCompanyPhoneNumber() -> String {
+        return companyPhoneNumber
+    }
+    
     public static let shared = CredentialsController()
     
     private init() {}

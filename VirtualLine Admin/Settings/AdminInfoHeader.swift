@@ -18,13 +18,13 @@ class AdminInfoHeader: UIView {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "ironman")
+        iv.image = UIImage(systemName: "person.crop.circle.fill")
         return iv
     }()
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Tony Stark"
+        label.text = CredentialsController.shared.companyName
         label.font = UIFont.systemFont(ofSize: 16)
        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +33,7 @@ class AdminInfoHeader: UIView {
     
     let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "tony.stark@gmail.com"
+        label.text = CredentialsController.shared.companyPhoneNumber
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -40,5 +40,11 @@ public struct UserDefaultsConfig {
     
     @UserDefaultsWrapper(key: "isQueueCreated", defaultValue: false)
     public static var isQueueCreated: Bool
+    
+    @UserDefaultsWrapper(key: "companyName", defaultValue: "Admin Profile")
+    public static var companyName: String
+    
+    @UserDefaultsWrapper(key: "companyPhoneNumber", defaultValue: "no number saved")
+    public static var companyPhoneNumber: String
    
 }
