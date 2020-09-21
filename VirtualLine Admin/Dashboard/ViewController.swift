@@ -45,9 +45,14 @@ class ViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             if UserDefaultsConfig.isQueueCreated {
                 getQueueReference()
-                newQueueButton.removeFromSuperview()
+                newQueueButton.isHidden = true
                 bigStackView.isHidden = false
             }
+        } else {
+            
+            newQueueButton.isHidden = false
+            bigStackView.isHidden = true
+            
         }
     }
 
@@ -146,7 +151,7 @@ class ViewController: UIViewController {
                         let queue = admin.queueID
                         CredentialsController.shared.admin = admin
                         guard let id = queue?.documentID else { return }
-                        self?.newQueueButton.removeFromSuperview()
+                        self?.newQueueButton.isHidden = true
                         self?.bigStackView.isHidden = false
                         self?.getQueueWith(id: id)
                     }
