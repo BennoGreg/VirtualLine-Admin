@@ -41,7 +41,7 @@ func setUpFirebase(){
 func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNotifyingCustomer: String){
     
     
-    guard let adminID = CredentialsController.shared.admin?.id else {return}
+    guard let adminID = Auth.auth().currentUser?.uid else {return}
     let adminRef = db.document("admin/\(adminID)")
     print("called createQueue")
     
