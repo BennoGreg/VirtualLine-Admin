@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         guard let queueID = CredentialsController.shared.admin?.queueID?.documentID else {return}
         
         if let currentCustomer = currentCustomer {
-            let dataDict: [String: Any] = ["id": queueID, "reference": currentCustomer.id, "position": currentCustomer.numberInQueue, "done": customerWasAvailable ]
+            let dataDict: [String: Any] = ["id": queueID, "reference": currentCustomer.id, "position": 1, "done": customerWasAvailable ]
 
             functions.httpsCallable("deleteReference").call(dataDict) { [weak self] _, error in
                 if let error = error as NSError? {
@@ -219,8 +219,9 @@ class ViewController: UIViewController {
         acceptCustomerButton.isHidden = false
         customerNotAvailableButton.isHidden = false
         if let queueCount = queue.queueCount, let timePerCustomer = queue.timePerCustomer {
-            queueWaitingTimeLabel.text = String(queueCount * timePerCustomer)
-            queueLengthLabel.text = String(queueCount)
+            let waitTime = queueCount * timePerCustomer
+            queueWaitingTimeLabel.text = "\(waitTime) min"
+            queueLengthLabel.text = "\(queueCount) Personen"
         }
     }
 
@@ -248,7 +249,7 @@ class ViewController: UIViewController {
     func updateCurrentCustomer(customer: User) {
         currentCustomer = customer
         if let customerQueueID = customer.customerQueueID {
-            currenCustomerIDLabel.text = "Nummer: \(customerQueueID)"
+            currenCustomerIDLabel.text = "Ticket ID: \(customerQueueID)"
         }
         currentCustomerLabel.text = customer.name
     }
@@ -256,7 +257,7 @@ class ViewController: UIViewController {
     func updateNextCustomer(customer: User) {
         nextCustomer = customer
         if let customerQueueID = customer.customerQueueID {
-            nextCustomerIDLabel.text = "Nummer: \(customerQueueID)"
+            nextCustomerIDLabel.text = "Ticket ID: \(customerQueueID)"
         }
         nextCustomerNameLabel.text = customer.name
     }

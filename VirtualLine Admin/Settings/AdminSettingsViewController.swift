@@ -188,7 +188,11 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
                try firebaseAuth.signOut()
             print("succesfully logged out")
             isLoggedIn = false
-            
+            CredentialsController.shared.admin = nil
+            CredentialsController.shared.companyName = ""
+            CredentialsController.shared.companyPhoneNumber = "no number saved"
+            UserDefaultsConfig.companyName = ""
+            UserDefaultsConfig.companyPhoneNumber = ""
             tableView.reloadData()
             viewWillAppear(false)
            } catch let signOutError as NSError {
