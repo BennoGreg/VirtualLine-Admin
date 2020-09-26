@@ -24,11 +24,11 @@ enum SettingsSection: Int, CaseIterable, CustomStringConvertible{
         
         switch self {
         case .profile:
-            return "Profile"
+            return "Profil"
         case .settings:
-            return "Settings"
+            return "Einstellungen"
         case .aboutUs:
-            return "About us"
+            return "Über uns"
         }
         
     }
@@ -47,9 +47,9 @@ enum LoggedInProfileOptions: Int, CaseIterable, CustomStringConvertible, Section
            
            switch self {
            case .editProfile:
-               return "Edit Profile"
+               return "Profil bearbeiten"
            case .logOut:
-               return "Log Out"
+               return "Ausloggen"
            }
            
        }
@@ -75,14 +75,14 @@ enum SettingsOptions: Int, CaseIterable, SectionType{
    
     
     case notification
-    case language
+    case deleteQueue
     
     var containsSwitch: Bool {
         
         switch self {
         case .notification:
             return true
-        case .language:
+        case .deleteQueue:
             return false
         default:
             return false
@@ -94,9 +94,9 @@ enum SettingsOptions: Int, CaseIterable, SectionType{
         
         switch self {
         case .notification:
-            return "Notification"
-        case .language:
-            return "Language"
+            return "Benachrichtigngen"
+        case .deleteQueue:
+            return "Warteschlange löschen"
         }
         
     }
@@ -114,9 +114,9 @@ enum AboutUsOptions: Int, CaseIterable, CustomStringConvertible, SectionType{
            
            switch self {
            case .gtc:
-               return "General terms and conditions (GTC)"
+               return "Allgemeine Geschäftsbedingungen"
            case .dataPrivacy:
-               return "Data Privacy"
+               return "Datenschutz"
            }
            
        }

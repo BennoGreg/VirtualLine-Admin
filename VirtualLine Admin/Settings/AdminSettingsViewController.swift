@@ -6,8 +6,8 @@
 //  Copyright © 2020 Benedikt. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 import Firebase
 
@@ -20,19 +20,16 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
     var userInfoHeader: AdminInfoHeader!
     var isLoggedIn = false
 
-
     // MARK: - Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         checkUserLoggedIn()
         configureUI()
-        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,29 +37,28 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
 
     // MARK: - Helper Functions
 
-    
     func checkUserLoggedIn() {
         if Auth.auth().currentUser != nil {
             isLoggedIn = true
         }
     }
-    
+
     func configureTableView() {
         tableView = UITableView()
-       // let color = UIColor(displayP3Red: 6 / 255, green: 14 / 255, blue: 79 / 255, alpha: 1)
-        tableView.backgroundColor = .white
+        // let color = UIColor(displayP3Red: 6 / 255, green: 14 / 255, blue: 79 / 255, alpha: 1)
+        tableView.backgroundColor = .black
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 60
+        tableView.rowHeight = 80
 
         tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         view.addSubview(tableView)
         tableView.frame = view.frame
 
         if isLoggedIn {
-        let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 100)
-        userInfoHeader = AdminInfoHeader(frame: frame)
-        tableView.tableHeaderView = userInfoHeader
+            let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 140)
+            userInfoHeader = AdminInfoHeader(frame: frame)
+            tableView.tableHeaderView = userInfoHeader
         }
         tableView.tableFooterView = UIView()
     }
@@ -71,121 +67,137 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
         configureTableView()
 
         parent?.title = "User"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.lightGray]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+
     }
 
     // MARK: TableView:
 
     func numberOfSections(in tableView: UITableView) -> Int {
-           return SettingsSection.allCases.count
-       }
+        return SettingsSection.allCases.count
+    }
 
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           guard let section = SettingsSection(rawValue: section) else { return 0 }
-           switch section {
-           case .profile:
-               if isLoggedIn {
-               return LoggedInProfileOptions.allCases.count
-               } else {
-               return LoggedOutProfileOptions.allCases.count
-               }
-           case .settings:
-               return SettingsOptions.allCases.count
-           case .aboutUs:
-               return AboutUsOptions.allCases.count
-           }
-       }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let section = SettingsSection(rawValue: section) else { return 0 }
+        switch section {
+        case .profile:
+            if isLoggedIn {
+                return LoggedInProfileOptions.allCases.count
+            } else {
+                return LoggedOutProfileOptions.allCases.count
+            }
+        case .settings:
+            return SettingsOptions.allCases.count
+        case .aboutUs:
+            return AboutUsOptions.allCases.count
+        }
+    }
 
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
 
-           guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
-           switch section {
-               
-           case .profile:
-               if isLoggedIn {
-               let profile = LoggedInProfileOptions.init(rawValue: indexPath.row)
-               cell.sectionType = profile
-               } else {
-                   let profile = LoggedOutProfileOptions.init(rawValue: indexPath.row)
-                   cell.sectionType = profile
-               }
-               
-           case .settings:
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
+        switch section {
+        case .profile:
+            if isLoggedIn {
+                let profile = LoggedInProfileOptions(rawValue: indexPath.row)
+                cell.sectionType = profile
+            } else {
+                let profile = LoggedOutProfileOptions(rawValue: indexPath.row)
+                cell.sectionType = profile
+            }
 
-               let setting = SettingsOptions.init(rawValue: indexPath.row)
-               cell.sectionType = setting
-           case .aboutUs:
-               
-               let aboutUs = AboutUsOptions.init(rawValue: indexPath.row)
-                 cell.sectionType = aboutUs
-           }
-           
-           
+        case .settings:
 
-           return cell
-       }
+            let setting = SettingsOptions(rawValue: indexPath.row)
+            cell.sectionType = setting
+        case .aboutUs:
 
-       func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-           let view = UIView()
+            let aboutUs = AboutUsOptions(rawValue: indexPath.row)
+            cell.sectionType = aboutUs
+        }
 
-           let title = UILabel()
-           title.font = UIFont.boldSystemFont(ofSize: 24)
-           title.textColor = .black
-           view.addSubview(title)
-           title.translatesAutoresizingMaskIntoConstraints = false
-           title.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-           title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        return cell
+    }
 
-           title.text = SettingsSection(rawValue: section)?.description
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
 
-           return view
-       }
+        let title = UILabel()
+        title.font = UIFont(name: "Futura", size: 35)
+        title.textColor = UIColor(named: "virtualLineColor")
+        view.addSubview(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        
+        title.text = SettingsSection(rawValue: section)?.description
 
-       func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return 40
-       }
-       
-       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           guard let section = SettingsSection(rawValue: indexPath.section) else { return}
-           
-           
-           switch section {
-               
-           case .profile:
-               
-              
-               if isLoggedIn {
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+
+        switch section {
+        case .profile:
+
+            if isLoggedIn {
                 if indexPath.row == 1 {
-                   CredentialsController.shared.updateLogInStatus(loggedIn: false)
-                   configureUI()
-                   logOutPhoneNumber()
-                   
-                   }
-                   
-               } else {
-                    
-                  performSegue(withIdentifier: Segues.phoneLoginSegue, sender: nil)
-                   
-                   
-               }
-               
-           case .settings:
+                    CredentialsController.shared.updateLogInStatus(loggedIn: false)
+                    configureUI()
+                    logOutPhoneNumber()
+                }
 
-               print(SettingsOptions.init(rawValue: indexPath.row)?.description)
-              
-           case .aboutUs:
-               
-               print(AboutUsOptions.init(rawValue: indexPath.row)?.description)
-                 
-           }
-       }
-       
-       func logOutPhoneNumber() {
-           
-           let firebaseAuth = Auth.auth()
-           
-           do {
-               try firebaseAuth.signOut()
+            } else {
+                performSegue(withIdentifier: Segues.phoneLoginSegue, sender: nil)
+            }
+
+        case .settings:
+
+            if indexPath.row == 1 {
+                let alert = UIAlertController(title: "Warteschlange löschen", message: "Möchten Sie wirklich ihre Warteschlange löschen?\nDies kann nicht rückgängig gemacht werden.", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Löschen", style: UIAlertAction.Style.default, handler: { _ in
+
+                    guard let adminID = CredentialsController.shared.admin?.id else { return }
+                    guard let queueID = CredentialsController.shared.admin?.queueID?.documentID else { return }
+
+                    let data = ["adminID": adminID, "queueID": queueID] as [String: Any]
+
+                    functions.httpsCallable("deleteQueue").call(data) { _, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            UserDefaultsConfig.isQueueCreated = false
+                            print("Queue deleted successfully!")
+                        }
+                    }
+
+                }))
+
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { _ in
+                }))
+                present(alert, animated: true, completion: nil)
+            }
+
+        case .aboutUs:
+
+            print(AboutUsOptions(rawValue: indexPath.row)?.description)
+        }
+    }
+
+    func logOutPhoneNumber() {
+        let firebaseAuth = Auth.auth()
+
+        do {
+            try firebaseAuth.signOut()
             print("succesfully logged out")
             isLoggedIn = false
             CredentialsController.shared.admin = nil
@@ -195,21 +207,15 @@ class AdminSettingsViewController: UIViewController, UITableViewDelegate, UITabl
             UserDefaultsConfig.companyPhoneNumber = ""
             tableView.reloadData()
             viewWillAppear(false)
-           } catch let signOutError as NSError {
-               print("Sign out error: \(signOutError)")
-           }
-           
-       }
-       
-       
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-              if segue.identifier == Segues.phoneLoginSegue {
-                    let vc = segue.destination as! PhoneLoginViewController
-                    let phoneLoginVC = vc.self
-              }
-            }
-       
-       
+        } catch let signOutError as NSError {
+            print("Sign out error: \(signOutError)")
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.phoneLoginSegue {
+            let vc = segue.destination as! PhoneLoginViewController
+            let phoneLoginVC = vc.self
+        }
+    }
 }
-
-

@@ -38,7 +38,7 @@ func setUpFirebase(){
 
 }
 
-func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNotifyingCustomer: String){
+func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNotifyingCustomer: String, completion: @escaping (() -> Void )) {
     
     
     guard let adminID = Auth.auth().currentUser?.uid else {return}
@@ -66,6 +66,7 @@ func createQueue(queueName: String, averageTimeCustomer: String, minutesBeforeNo
                             print(error.localizedDescription)
                         }else {
                             print("Admin updated")
+                            completion()
                         }
                     }
                 }

@@ -25,8 +25,8 @@ class AdminInfoHeader: UIView {
     let usernameLabel: UILabel = {
         let label = UILabel()
         label.text = CredentialsController.shared.companyName
-        label.font = UIFont.systemFont(ofSize: 16)
-       label.textColor = .black
+        label.font = UIFont(name: "Futura", size: 25)
+       label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -34,7 +34,7 @@ class AdminInfoHeader: UIView {
     let emailLabel: UILabel = {
         let label = UILabel()
         label.text = CredentialsController.shared.companyPhoneNumber
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont(name: "Futura", size: 22)
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,7 +45,7 @@ class AdminInfoHeader: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let profileImageDimension: CGFloat = 60
+        let profileImageDimension: CGFloat = 80
         
         addSubview(profileImageView)
         profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
@@ -59,7 +59,7 @@ class AdminInfoHeader: UIView {
         usernameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
         
         addSubview(emailLabel)
-        emailLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: 10).isActive = true
+        emailLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: 20).isActive = true
         emailLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
     }
     

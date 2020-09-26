@@ -32,7 +32,7 @@ public struct UserDefaultsConfig {
     @UserDefaultsWrapper(key: "isLoggedIn", defaultValue: false)
     public static var isLoggedIn: Bool
     
-    @UserDefaultsWrapper(key: "verificationID", defaultValue: "defaultå")
+    @UserDefaultsWrapper(key: "verificationID", defaultValue: "default")
     public static var verificationID: String
     
     @UserDefaultsWrapper(key: "notifcationsEnabled", defaultValue: false)

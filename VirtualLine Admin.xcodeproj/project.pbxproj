@@ -14,6 +14,7 @@
 		3F3209932512056F0072194E /* PhoneLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F320990251205650072194E /* PhoneLoginViewModel.swift */; };
 		3F3209942512056F0072194E /* PhoneLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F320991251205690072194E /* PhoneLoginViewController.storyboard */; };
 		3F3209952512056F0072194E /* PhoneLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3209922512056F0072194E /* PhoneLoginViewController.swift */; };
+		3F4E0B5D251F7A4F00F1206D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4E0B5C251F7A4F00F1206D /* Color.xcassets */; };
 		85185BC224853E9C00539DA7 /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185BC124853E9C00539DA7 /* ServerCommunication.swift */; };
 		855301DC2483FF570040CF7D /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855301DB2483FF570040CF7D /* TestData.swift */; };
 		855301DE24840A830040CF7D /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855301DD24840A830040CF7D /* AdminSettingsViewController.swift */; };
@@ -42,6 +43,7 @@
 		3F320990251205650072194E /* PhoneLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginViewModel.swift; sourceTree = "<group>"; };
 		3F320991251205690072194E /* PhoneLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhoneLoginViewController.storyboard; sourceTree = "<group>"; };
 		3F3209922512056F0072194E /* PhoneLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginViewController.swift; sourceTree = "<group>"; };
+		3F4E0B5C251F7A4F00F1206D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		85185BC124853E9C00539DA7 /* ServerCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		855301DB2483FF570040CF7D /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		855301DD24840A830040CF7D /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D3A7B559246072E700C0247C /* LaunchScreen.storyboard */,
 				D3A7B55C246072E700C0247C /* Info.plist */,
 				D3A7B554246072E500C0247C /* VirtualLine_Admin.xcdatamodeld */,
+				3F4E0B5C251F7A4F00F1206D /* Color.xcassets */,
 			);
 			path = "VirtualLine Admin";
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				855301E024840AB50040CF7D /* AdminSettingsViewController.storyboard in Resources */,
+				3F4E0B5D251F7A4F00F1206D /* Color.xcassets in Resources */,
 				3F3209942512056F0072194E /* PhoneLoginViewController.storyboard in Resources */,
 				D3A7B55B246072E700C0247C /* LaunchScreen.storyboard in Resources */,
 				D3A7B558246072E700C0247C /* Assets.xcassets in Resources */,

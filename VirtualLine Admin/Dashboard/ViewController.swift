@@ -41,12 +41,20 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        bigStackView?.isHidden = true
+        customerDoneButton?.isHidden = true
+        setUpUI()
+        
         setUpFirebase()
         if Auth.auth().currentUser != nil {
             if UserDefaultsConfig.isQueueCreated {
                 getQueueReference()
                 newQueueButton.isHidden = true
                 bigStackView.isHidden = false
+            }else {
+                newQueueButton.isHidden = false
+                bigStackView.isHidden = true
+                
             }
         } else {
             
@@ -57,7 +65,7 @@ class ViewController: UIViewController {
     }
 
     func setUpUI() {
-        newQueueButton?.applyGradient(colors: [ViewController.UIColorFromRGB(0x69BDD2).cgColor, ViewController.UIColorFromRGB(0x44BCDA).cgColor])
+        newQueueButton?.applyDesign()
         newQueueButton?.setTitle("Warteschlange erstellen", for: .normal)
     }
 
@@ -279,22 +287,11 @@ class ViewController: UIViewController {
 }
 
 extension UIButton {
-    func applyGradient(colors: [CGColor]) {
-        backgroundColor = nil
+    func applyDesign() {
+        backgroundColor = UIColor(named: "virtualLineColor")
         layoutIfNeeded()
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-        gradientLayer.frame = bounds
-        gradientLayer.cornerRadius = frame.height / 2
-
-        gradientLayer.shadowColor = UIColor.darkGray.cgColor
-        gradientLayer.shadowOffset = CGSize(width: 2.5, height: 2.5)
-        gradientLayer.shadowRadius = 5.0
-        gradientLayer.shadowOpacity = 0.3
-        gradientLayer.masksToBounds = false
-        layer.insertSublayer(gradientLayer, at: 0)
+        layer.cornerRadius = frame.height / 2
+        
         contentVerticalAlignment = .center
         setTitleColor(UIColor.white, for: .normal)
         // self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)

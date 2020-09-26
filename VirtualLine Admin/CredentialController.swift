@@ -6,7 +6,7 @@
 //  Copyright © 2020 Benedikt. All rights reserved.
 //
 
-import Foundation
+import Firebase
 
 class CredentialsController {
     
@@ -26,6 +26,12 @@ class CredentialsController {
     public func updateAdminInfo() {
         companyName = UserDefaultsConfig.companyName
         companyPhoneNumber = UserDefaultsConfig.companyPhoneNumber
+        
+        if let adminID = Auth.auth().currentUser?.uid {
+        
+        db.collection("admin").document(adminID).updateData(["name": companyName])
+            
+        }
     }
     
     public func getCompanyPhoneNumber() -> String {

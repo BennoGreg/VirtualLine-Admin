@@ -23,7 +23,7 @@ class AddQueueViewController: UIViewController {
     }
 
     func setUpUI() {
-        createQueueButton.applyGradient(colors: [ViewController.UIColorFromRGB(0x69BDD2).cgColor, ViewController.UIColorFromRGB(0x44BCDA).cgColor])
+        createQueueButton.applyDesign()
         createQueueButton.setTitle("Warteschlange erstellen", for: .normal)
     }
 
@@ -35,9 +35,11 @@ class AddQueueViewController: UIViewController {
                     if let name = queueNameTextField.text {
                         if let waitTime = queueAverageWaitingTimeTextfield.text {
                             if let reminder = queueReminderTextfield.text {
-                                createQueue(queueName: name, averageTimeCustomer: waitTime, minutesBeforeNotifyingCustomer: reminder)
-                                UserDefaultsConfig.isQueueCreated = true
-                                navController.popViewController(animated: true)
+                                createQueue(queueName: name, averageTimeCustomer: waitTime, minutesBeforeNotifyingCustomer: reminder) {
+                                    UserDefaultsConfig.isQueueCreated = true
+                                    navController.popViewController(animated: true)
+                                }
+                               
                             }
                         }
                     }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,18 +27,18 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktueller Kunde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2C-PO-kZk">
                                                 <rect key="frame" x="32" y="64" width="896" height="52"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
-                                                <color key="textColor" red="0.025901304560000001" green="0.05380536616" blue="0.30961942669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" name="virtualLineColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wartschlange leer." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txy-kj-YK6">
                                                 <rect key="frame" x="351" y="282.5" width="258" height="39"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpT-u5-ID4">
-                                                <rect key="frame" x="200" y="494" width="560" height="110"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <rect key="frame" x="200" y="474" width="560" height="110"/>
+                                                <color key="backgroundColor" name="virtualLineColor"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                                 <state key="normal" title="Kundenservice abgeschlossen">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,11 +53,11 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="eCI-pu-9me">
-                                                <rect key="frame" x="200" y="494" width="560" height="110"/>
+                                                <rect key="frame" x="200" y="474" width="560" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDG-uc-b7T">
                                                         <rect key="frame" x="0.0" y="0.0" width="264" height="110"/>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <color key="backgroundColor" name="virtualLineColor"/>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                         <state key="normal" title="Kunde da">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,13 +93,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-Vc-tWe">
-                                                <rect key="frame" x="32" y="337.5" width="896" height="111.5"/>
+                                                <rect key="frame" x="32" y="337.5" width="896" height="91.5"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="N2C-PO-kZk" secondAttribute="trailing" constant="32" id="11v-kX-M7G"/>
                                             <constraint firstItem="eqh-Vc-tWe" firstAttribute="centerX" secondItem="Txy-kj-YK6" secondAttribute="centerX" id="22a-4m-Vep"/>
@@ -109,15 +110,20 @@
                                             <constraint firstItem="eCI-pu-9me" firstAttribute="top" secondItem="eqh-Vc-tWe" secondAttribute="bottom" constant="45" id="Uer-OR-dp6"/>
                                             <constraint firstAttribute="trailing" secondItem="RpT-u5-ID4" secondAttribute="trailing" constant="200" id="VEH-W5-OqF"/>
                                             <constraint firstItem="Txy-kj-YK6" firstAttribute="centerY" secondItem="9SR-di-Dzh" secondAttribute="centerY" id="VGx-xY-yfo"/>
-                                            <constraint firstAttribute="bottom" secondItem="RpT-u5-ID4" secondAttribute="bottom" id="ZcX-7k-jQj"/>
+                                            <constraint firstAttribute="bottom" secondItem="RpT-u5-ID4" secondAttribute="bottom" constant="20" id="ZcX-7k-jQj"/>
                                             <constraint firstItem="eqh-Vc-tWe" firstAttribute="top" secondItem="Txy-kj-YK6" secondAttribute="bottom" constant="16" id="bTR-xo-hgD"/>
                                             <constraint firstItem="N2C-PO-kZk" firstAttribute="top" secondItem="9SR-di-Dzh" secondAttribute="top" constant="64" id="bq4-90-UgF"/>
                                             <constraint firstItem="RpT-u5-ID4" firstAttribute="leading" secondItem="9SR-di-Dzh" secondAttribute="leading" constant="200" id="dJp-s2-nDi"/>
                                             <constraint firstItem="Txy-kj-YK6" firstAttribute="centerX" secondItem="9SR-di-Dzh" secondAttribute="centerX" id="m9U-Ku-ebJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="eCI-pu-9me" secondAttribute="bottom" id="mkG-k5-U2a"/>
+                                            <constraint firstAttribute="bottom" secondItem="eCI-pu-9me" secondAttribute="bottom" constant="20" id="mkG-k5-U2a"/>
                                             <constraint firstItem="N2C-PO-kZk" firstAttribute="leading" secondItem="9SR-di-Dzh" secondAttribute="leading" constant="32" id="tUv-7L-TCD"/>
                                             <constraint firstItem="eqh-Vc-tWe" firstAttribute="leading" secondItem="9SR-di-Dzh" secondAttribute="leading" constant="32" id="yI2-eN-CZr"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-Ee-COy">
                                         <rect key="frame" x="0.0" y="628" width="960" height="604"/>
@@ -131,23 +137,23 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nächster Kunde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLu-xy-qL4">
                                                                 <rect key="frame" x="32" y="45" width="404" height="42"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
-                                                                <color key="textColor" red="0.025901304560000001" green="0.05380536616" blue="0.30961942669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" name="virtualLineColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warteschlange leer." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-cv-Hys">
                                                                 <rect key="frame" x="97" y="282.5" width="274.5" height="39"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-Og-Yy0">
                                                                 <rect key="frame" x="2" y="353.5" width="464" height="0.0"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="DLu-xy-qL4" secondAttribute="trailing" constant="32" id="3bG-qQ-GDw"/>
                                                             <constraint firstAttribute="trailing" secondItem="0Od-Og-Yy0" secondAttribute="trailing" constant="2" id="8f7-Dq-w3x"/>
@@ -160,7 +166,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="5"/>
+                                                                <integer key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -170,35 +176,35 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktuelle Warteschlange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCb-VM-TYU">
                                                                 <rect key="frame" x="16" y="45" width="436" height="34"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="26"/>
-                                                                <color key="textColor" red="0.025901304560000001" green="0.05380536616" blue="0.30961942669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" name="virtualLineColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktuelle Anzahl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-pv-pcF">
                                                                 <rect key="frame" x="16" y="215" width="436" height="39"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ungefähre Wartezeit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0So-Ns-E2V">
                                                                 <rect key="frame" x="16" y="350.5" width="436" height="39"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Personen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVd-Iy-qlZ">
                                                                 <rect key="frame" x="171" y="286" width="126" height="32.5"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Minuten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAg-Pa-ICu">
                                                                 <rect key="frame" x="16" y="421.5" width="436" height="32.5"/>
                                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="YVd-Iy-qlZ" firstAttribute="centerX" secondItem="Ae1-PX-Qb2" secondAttribute="centerX" id="09x-gE-hqq"/>
                                                             <constraint firstItem="YVd-Iy-qlZ" firstAttribute="top" secondItem="HMU-pv-pcF" secondAttribute="bottom" constant="32" id="4R5-hg-AHc"/>
@@ -217,11 +223,12 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="5"/>
+                                                                <integer key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,7 +255,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="huJ-nS-JU0" secondAttribute="bottom" constant="32" id="35L-8a-WFS"/>
                             <constraint firstItem="huJ-nS-JU0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="TLl-w7-JfR"/>
@@ -261,6 +268,7 @@
                     <navigationItem key="navigationItem" title="Virtual Line Admin" id="VN4-ZC-qFN">
                         <barButtonItem key="leftBarButtonItem" id="sEG-v9-gWP"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" image="user" id="xds-SE-AJf">
+                            <color key="tintColor" name="virtualLineColor"/>
                             <connections>
                                 <segue destination="D2D-4I-540" kind="show" identifier="settingsSegue" id="PdW-58-B0d"/>
                             </connections>
@@ -315,6 +323,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f3A-KB-eSV">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -326,18 +340,12 @@
             <point key="canvasLocation" x="131.8840579710145" y="91.741071428571431"/>
         </scene>
     </scenes>
-    <color key="tintColor" systemColor="labelColor"/>
+    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="user" width="24" height="24"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="virtualLineColor">
+            <color red="0.028999999165534973" green="0.58499997854232788" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -16,6 +16,8 @@ class SettingsCell: UITableViewCell {
         didSet {
             guard let sectionType = sectionType else { return }
             textLabel?.text = sectionType.description
+            textLabel?.textColor = .lightGray
+            textLabel?.font = UIFont(name: "Futura", size: 25)
             switchControl.isHidden = !sectionType.containsSwitch
         }
     }
@@ -28,6 +30,7 @@ class SettingsCell: UITableViewCell {
         } else {
             switchControl.isOn = false
         }
+        switchControl.onTintColor = UIColor(named: "virtualLineColor")
         // switchControl.onTintColor = UIColor(displayP3Red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
@@ -42,6 +45,7 @@ class SettingsCell: UITableViewCell {
         if let view = accessoryView {
             addSubview(view)
         }
+        
         switchControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         switchControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
     }
